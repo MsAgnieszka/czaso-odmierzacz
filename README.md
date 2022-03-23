@@ -1,4 +1,4 @@
-# czaso-odmierzacz
+# Indywidualny czaso-odmierzacz
 Odmierzacz czasu do wydarzenia - domyślnie do dnia dziecka, z możliwością zmiany daty, kolorystyki oraz grafiki
 
 
