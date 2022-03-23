@@ -1,0 +1,306 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: rgb(255, 235, 215);
+  --hover-btn-color: rgb(255, 216, 176);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--main-color);
+}
+
+.counter-app {
+  position: relative;
+}
+
+.counter-app .app-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 600px;
+  height: 600px;
+  border-radius: 10px;
+  border: 1px outset rgba(40, 40, 40, 0.8);
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+  overflow: hidden;
+}
+
+.counter-app .app-body .image-section {
+  position: relative;
+  height: 300px;
+  background-image: url("/default-image.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px groove black;
+  z-index: 10;
+}
+
+.counter-app .app-body .image-section .settings-btn,
+.counter-app .app-body .image-section .color-btn {
+  position: absolute;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: color 0.3s, border 0.3s, background-color 0.3s;
+  transition: color 0.3s, border 0.3s, background-color 0.3s;
+}
+
+.counter-app .app-body .image-section .settings-btn {
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+}
+
+.counter-app .app-body .image-section .color-btn {
+  bottom: 15px;
+  left: 15px;
+  font-size: 30px;
+}
+
+.counter-app .app-body .image-section .settings-btn:hover,
+.counter-app .app-body .image-section .color-btn:hover {
+  color: var(--main-color);
+  border: 1px solid rgba(40, 40, 40, 0.8);
+  background-color: #282828;
+}
+
+.counter-app .app-body .time-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 300px;
+  background-color: white;
+  z-index: 10;
+}
+
+.counter-app .app-body .time-section h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.counter-app .app-body .time-section .time-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+}
+
+.counter-app .app-body .time-section .time-cards .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+  width: 17%;
+  text-align: center;
+  background-color: var(--main-color);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.counter-app .app-body .time-section .time-cards .card .number {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.counter-app .app-body .time-section .time-cards .card .card-title {
+  text-align: center;
+}
+
+.counter-app .settings,
+.counter-app .colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  text-align: center;
+  padding: 32px 15px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, -webkit-transform 0.4s;
+  transition: opacity 0.3s, transform 0.4s;
+  transition: opacity 0.3s, transform 0.4s, -webkit-transform 0.4s;
+}
+
+.counter-app .settings h1,
+.counter-app .colors h1 {
+  margin: 0 5px 30px 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.counter-app .settings h1 span,
+.counter-app .colors h1 span {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.counter-app .settings .settings-buttons,
+.counter-app .colors .settings-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 90%;
+}
+
+.counter-app .settings .settings-buttons button,
+.counter-app .colors .settings-buttons button {
+  padding: 7px 14px;
+  margin: 8px 0;
+  background-color: var(--main-color);
+  border: 1px solid rgba(40, 40, 40, 0.8);
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.counter-app .settings .settings-buttons button:hover,
+.counter-app .colors .settings-buttons button:hover {
+  background-color: var(--hover-btn-color);
+}
+
+.counter-app .settings .settings-buttons .save,
+.counter-app .settings .settings-buttons .save-color,
+.counter-app .colors .settings-buttons .save,
+.counter-app .colors .settings-buttons .save-color {
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.counter-app .settings label,
+.counter-app .colors label {
+  margin-bottom: 10px;
+}
+
+.counter-app .colors {
+  position: absolute;
+  top: 127px;
+  left: 5px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid rgba(40, 40, 40, 0.8);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.counter-app .colors h3 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.counter-app .colors input {
+  margin: 20px 0;
+  height: 30px;
+  width: 60%;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.counter-app .settings {
+  top: 15px;
+  right: 5px;
+  width: 330px;
+  background-color: white;
+  border: 1px solid rgba(40, 40, 40, 0.8);
+  border-radius: 5px;
+}
+
+.counter-app .settings input {
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  width: 100%;
+  background-color: var(--main-color);
+  border: 1px solid rgba(40, 40, 40, 0.8);
+  border-radius: 5px;
+}
+
+.counter-app .settings input#event-image {
+  margin-bottom: 10px;
+}
+
+.counter-app .settings .error {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: red;
+  visibility: hidden;
+}
+
+.counter-app .settings.active {
+  -webkit-transform: translateX(360px);
+          transform: translateX(360px);
+  opacity: 1;
+}
+
+.counter-app .colors.active {
+  -webkit-transform: translateX(-230px);
+          transform: translateX(-230px);
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

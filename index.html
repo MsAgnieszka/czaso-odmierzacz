@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Za ile dni jest dzień dziecka? Ile czasu pozostało do koncertu? Jak długo muszę czekać do ważnego wydarzenia? Odmierzacz czasu wyliczy to co do sekundy!">
+    <meta name="author" content="Agnieszka Uzarek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Odliczanie czasu do wydarzenia | Indywidualny czaso-odmierzacz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/f3198f14e9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="counter-app">
+        <div class="settings">
+            <h1>Ustaw odliczanie czasu do <span>Twojego wydarzenia</span></h1>
+            <label for="event-name">Nazwa wydarzenia:</label>
+            <input type="text" id="event-name" value="Dzień dziecka" placeholder="Podaj nazwę wydarzenia">
+            <table class="date">
+                <tr>
+                    <td><label for="event-day">Dzień:</label></td>
+                    <td><label for="event-month">Miesiąc</label></td>
+                    <td><label for="event-year">Rok:</label></td>
+
+                </tr>
+                <tr>
+                    <td><input type="number" id="event-day" maxlength="2" value="1"></td>
+                    <td><input type="number" id="event-month" maxlength="2" value="6"></td>
+                    <td><input type="number" id="event-year" maxlength="4" value="2022"></td>
+                </tr>
+            </table>
+            <label for="event-image">Link do obrazka:</label>
+            <input type="text" id="event-image" value="default-image.jpg"
+                placeholder="Podaj adres obrazka np. https://cdn.pixabay.com/photo/2020/09/18/21/12/person-5582976_960_720.jpg">
+            <p class="error">Musisz prawidłowo uzupełnić wszystkie pola.</p>
+            <div class="settings-buttons">
+                <button class="save">Zapisz wydarzenie</button>
+                <button class="reset-settings">Reset wydarzenia</button>
+            </div>
+        </div>
+
+        <div class="colors">
+            <h3>Zmiana kolorystyki</h3>
+            <label for="info">Wybierz dowolny kolor z palety:</label>
+            <input type="color" id="colorInput">
+            <div class="settings-buttons">
+                <button class="save-color" onclick="changeColor()">Zapisz kolor</button>
+                <button class="reset-color">Przywróć domyślny</button>
+            </div>
+
+        </div>
+
+        <div class="app-body">
+            <div class="image-section">
+                <div class="settings-btn"><i class="fas fa-user-cog"></i></div>
+                <div class="color-btn"><i class="fas fa-paint-roller"></i></div>
+
+
+
+            </div>
+
+            <div class="time-section">
+                <h2><span class="event">Dzień dziecka</span> za:</h2>
+                <div class="time-cards">
+
+                    <div class="card">
+                        <p class="days-count number">1</p>
+                        <p class="card-title">Dni</p>
+                    </div>
+
+                    <div class="card">
+                        <p class="hours-count number">1</p>
+                        <p class="card-title">Godzin</p>
+                    </div>
+
+                    <div class="card">
+                        <p class="minutes-count number">1</p>
+                        <p class="card-title">Minut</p>
+                    </div>
+
+                    <div class="card">
+                        <p class="seconds-count number">1</p>
+                        <p class="card-title">Sekund</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
